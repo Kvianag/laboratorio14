@@ -1,0 +1,103 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Estilos del nav */
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Estilos del submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 150px;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+/* Botón de navegación móvil */
+#nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilos de las secciones */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+    
+    nav.nav-open ul {
+        display: flex;
+    }
+    
+    #nav-toggle {
+        display: block;
+    }
+    
+    .submenu {
+        position: static;
+        background-color: #555;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+}
